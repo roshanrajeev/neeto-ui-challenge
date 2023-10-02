@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Clock, MenuVertical } from "@bigbinary/neeto-icons";
-import { Tag, Tooltip, Typography } from "@bigbinary/neetoui";
+import { Avatar, Tag, Tooltip, Typography } from "@bigbinary/neetoui";
 
 import { calculateElapsedTime, formatTime } from "components/utils";
 
@@ -30,9 +30,10 @@ const Item = ({ createdAt, description, id, tags, title }) => (
           <span className="mr-1">
             <Clock size="16px" />
           </span>
-          <Typography style="body3">
+          <Typography className="mr-1" style="body3">
             {calculateElapsedTime(createdAt)}
           </Typography>
+          <Avatar size="small" />
         </div>
       </Tooltip>
     </div>
