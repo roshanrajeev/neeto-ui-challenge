@@ -1,15 +1,20 @@
 import React from "react";
 
-import { Clock } from "@bigbinary/neeto-icons";
+import { Clock, MenuVertical } from "@bigbinary/neeto-icons";
 import { Tag, Tooltip, Typography } from "@bigbinary/neetoui";
 
 import { calculateElapsedTime, formatTime } from "components/utils";
 
 const Item = ({ createdAt, description, id, tags, title }) => (
   <div className="mb-3  w-full rounded-sm border border-solid p-4 shadow-sm">
-    <Typography className="mb-2" style="h4">
-      {title}
-    </Typography>
+    <div className="flex justify-between">
+      <Typography className="mb-2" style="h4">
+        {title}
+      </Typography>
+      <button>
+        <MenuVertical size="15px" />
+      </button>
+    </div>
     <Typography className="neeto-ui-text-gray-600 mb-2" style="body2">
       {description}
     </Typography>
