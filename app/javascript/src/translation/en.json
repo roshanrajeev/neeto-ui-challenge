@@ -1,12 +1,24 @@
 {
-  "notes.title": "All Notes",
-  "notes.add_note": "Add Note",
-  "notes.empty.title": "Looks like you don't have any notes!",
-  "notes.empty.subtitle": "Add your notes to send customized emails to them.",
-  "notes.empty.new_note": "Add new note",
-  "note.edit": "Edit",
-  "note.delete": "Delete",
-  "note.delete.alert.message": "Are you sure you want to delete the note? This action cannot be undone.",
-  "note.delete.alert.submit": "Continue",
-  "note.delete.alert.title": "Delete Note"
+  "titles": {
+    "notes": "All Notes",
+    "add_new_entity": "Add New {{entity}}"
+  },
+  "buttons": {
+    "add_entity": "Add {{entity}}"
+  },
+  "empty_state": {
+    "title": "Looks like you don't have any notes!",
+    "subtitle": "Add your notes to send customized emails to them.",
+    "new_note": "Add new note"
+  },
+  "toasts": {
+    "note_added": "Note has been successfully added"
+  },
+  "note_delete_alert": {
+    "title": "Delete Note",
+    "message": "Are you sure you want to delete the note? This action cannot be undone."
+  },
+  "edit": "Edit",
+  "delete": "Delete",
+  "continue": "Continue"
 }
