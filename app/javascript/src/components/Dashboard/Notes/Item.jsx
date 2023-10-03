@@ -1,51 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Clock, MenuVertical } from "@bigbinary/neeto-icons";
-import { Avatar, Dropdown, Tag, Tooltip, Typography } from "@bigbinary/neetoui";
+import {
+  Alert,
+  Avatar,
+  Dropdown,
+  Tag,
+  Tooltip,
+  Typography,
+} from "@bigbinary/neetoui";
 import { useTranslation } from "react-i18next";
 
 import { calculateElapsedTime, formatTimeForTooltip } from "./utils";
 
-const Item = ({ note }) => {
+const Item = ({ note, onDelete }) => {
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
   const { t } = useTranslation();
 
   const { Menu, MenuItem } = Dropdown;
 
   return (
-    <div className="flex w-full flex-col gap-y-2 rounded-sm border border-solid p-4 shadow-sm">
-      <div className="flex justify-between">
-        <Typography style="h4">{note.title}</Typography>
-        <Dropdown buttonStyle="text" icon={() => <MenuVertical size="15px" />}>
-          <Menu>
-            <MenuItem.Button>{t("note.edit")}</MenuItem.Button>
-            <MenuItem.Button>{t("note.delete")}</MenuItem.Button>
-          </Menu>
-        </Dropdown>
-      </div>
-      <Typography className="neeto-ui-text-gray-600" style="body2">
-        {note.description}
-      </Typography>
-      <hr />
-      <div className="flex items-center justify-between">
-        <div className="flex gap-x-1">
-          {note.tags.map(tag => (
-            <Tag key={`${note.id}-${tag}`} label={tag} />
-          ))}
+    <>
+      <div className="flex w-full flex-col gap-y-2 rounded-sm border border-solid p-4 shadow-sm">
+        <div className="flex justify-between">
+          <Typography style="h4">{note.title}</Typography>
+          <Dropdown
+            buttonStyle="text"
+            icon={() => <MenuVertical size="15px" />}
+          >
+            <Menu>
+              <MenuItem.Button>{t("note.edit")}</MenuItem.Button>
+              <MenuItem.Button onClick={() => setIsDeleteAlertOpen(true)}>
+                {t("note.delete")}
+              </MenuItem.Button>
+            </Menu>
+          </Dropdown>
         </div>
-        <Tooltip
-          content={formatTimeForTooltip(note.createdAt)}
-          position="bottom"
-        >
-          <div className="flex items-center gap-x-1">
-            <Clock size="16px" />
-            <Typography style="body3">
-              {note.status} {calculateElapsedTime(note.createdAt)}
-            </Typography>
-            <Avatar size="small" />
+        <Typography className="neeto-ui-text-gray-600" style="body2">
+          {note.description}
+        </Typography>
+        <hr />
+        <div className="flex items-center justify-between">
+          <div className="flex gap-x-1">
+            {note.tags.map(tag => (
+              <Tag key={`${note.id}-${tag}`} label={tag} />
+            ))}
           </div>
-        </Tooltip>
+          <Tooltip
+            content={formatTimeForTooltip(note.createdAt)}
+            position="bottom"
+          >
+            <div className="flex items-center gap-x-1">
+              <Clock size="16px" />
+              <Typography style="body3">
+                {note.status} {calculateElapsedTime(note.createdAt)}
+              </Typography>
+              <Avatar size="small" />
+            </div>
+          </Tooltip>
+        </div>
       </div>
-    </div>
+      <Alert
+        isOpen={isDeleteAlertOpen}
+        message={t("note.delete.alert.message")}
+        submitButtonLabel={t("note.delete.alert.submit")}
+        title={t("note.delete.alert.title")}
+        onClose={() => setIsDeleteAlertOpen(false)}
+        onSubmit={() => onDelete(note.id)}
+      />
+    </>
   );
 };
 

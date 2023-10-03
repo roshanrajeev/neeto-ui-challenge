@@ -25,7 +25,7 @@ const Notes = () => {
         }
       />
       {notes.length > 0 ? (
-        <List notes={notes} />
+        <List notes={notes} setNotes={setNotes} />
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
