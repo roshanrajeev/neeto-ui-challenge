@@ -5,5 +5,8 @@
   "notes.empty.subtitle": "Add your notes to send customized emails to them.",
   "notes.empty.new_note": "Add new note",
   "note.edit": "Edit",
-  "note.delete": "Delete"
+  "note.delete": "Delete",
+  "note.delete.alert.message": "Are you sure you want to delete the note? This action cannot be undone.",
+  "note.delete.alert.submit": "Continue",
+  "note.delete.alert.title": "Delete Note"
 }
