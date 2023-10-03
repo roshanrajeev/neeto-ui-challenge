@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Pane, Toastr, Typography } from "@bigbinary/neetoui";
+import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
 
 import { getTimestampInSeconds } from "components/utils";
@@ -8,6 +9,8 @@ import { getTimestampInSeconds } from "components/utils";
 import Form from "./Form";
 
 const Create = ({ isOpen, onClose, setNotes }) => {
+  const { t } = useTranslation();
+
   const handleSubmit = formValues => {
     const createdAt = getTimestampInSeconds();
     const assignedContact = formValues.assignedContact.value;
@@ -25,7 +28,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
     };
 
     setNotes(prev => [newNote, ...prev]);
-    Toastr.success("Note has been successfully added.");
+    Toastr.success(t("toasts.note_added"));
     onClose();
   };
 
@@ -33,7 +36,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
     <Pane isOpen={isOpen} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Add new post
+          {t("titles.add_new_entity", { entity: "Note" })}
         </Typography>
       </Pane.Header>
       <Form onClose={onClose} onSubmit={handleSubmit} />

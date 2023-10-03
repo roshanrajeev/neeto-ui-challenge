@@ -15,7 +15,7 @@ import { DUMMY_NOTES } from "../constants";
 
 const Notes = () => {
   const [notes, setNotes] = useState(DUMMY_NOTES);
-  const [isNewNotePaneOpen, setIsNewNotePaneOpen] = useState(true);
+  const [isNewNotePaneOpen, setIsNewNotePaneOpen] = useState(false);
 
   const { t } = useTranslation();
 
@@ -28,6 +28,7 @@ const Notes = () => {
             icon="ri-add-line"
             label={t("buttons.add_entity", { entity: "Note" })}
             size="small"
+            onClick={() => setIsNewNotePaneOpen(true)}
           />
         }
       />
