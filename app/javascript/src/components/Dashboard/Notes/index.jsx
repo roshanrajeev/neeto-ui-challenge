@@ -8,11 +8,14 @@ import { useTranslation } from "react-i18next";
 import EmptyState from "components/commons/EmptyState";
 import { noop } from "components/utils";
 
-import { DUMMY_NOTES } from "./constants";
+import Create from "./Create";
 import List from "./List";
 
+import { DUMMY_NOTES } from "../constants";
+
 const Notes = () => {
-  const [notes, setNotes] = useState(DUMMY_NOTES); // eslint-disable-line
+  const [notes, setNotes] = useState(DUMMY_NOTES);
+  const [isNewNotePaneOpen, setIsNewNotePaneOpen] = useState(true);
 
   const { t } = useTranslation();
 
@@ -21,8 +24,18 @@ const Notes = () => {
       <Header
         title={t("notes.title")}
         actionBlock={
-          <Button icon="ri-add-line" label={t("notes.add_note")} size="small" />
+          <Button
+            icon="ri-add-line"
+            label={t("notes.add_note")}
+            size="small"
+            onClick={() => setIsNewNotePaneOpen(true)}
+          />
         }
+      />
+      <Create
+        isOpen={isNewNotePaneOpen}
+        setNotes={setNotes}
+        onClose={() => setIsNewNotePaneOpen(false)}
       />
       {notes.length > 0 ? (
         <List notes={notes} setNotes={setNotes} />

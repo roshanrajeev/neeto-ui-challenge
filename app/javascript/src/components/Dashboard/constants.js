@@ -1,0 +1,111 @@
+export const NOTE_TAGS = [
+  "Getting Started",
+  "Onboarding",
+  "User Flow",
+  "UX",
+  "Bugs",
+  "V2",
+];
+
+export const DUMMY_CONTACTS = [
+  {
+    id: 1,
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@example.com",
+    role: "Developer",
+  },
+  {
+    id: 2,
+    firstName: "Alice",
+    lastName: "Smith",
+    email: "alice.smith@example.com",
+    role: "Designer",
+  },
+  {
+    id: 3,
+    firstName: "Bob",
+    lastName: "Johnson",
+    email: "bob.johnson@example.com",
+    role: "Manager",
+  },
+  {
+    id: 4,
+    firstName: "Emily",
+    lastName: "Davis",
+    email: "emily.davis@example.com",
+    role: "Analyst",
+  },
+  {
+    id: 5,
+    firstName: "Michael",
+    lastName: "Clark",
+    email: "michael.clark@example.com",
+    role: "Developer",
+  },
+  {
+    id: 6,
+    firstName: "Sara",
+    lastName: "Williams",
+    email: "sara.williams@example.com",
+    role: "Product Manager",
+  },
+  {
+    id: 7,
+    firstName: "Daniel",
+    lastName: "Taylor",
+    email: "daniel.taylor@example.com",
+    role: "QA Tester",
+  },
+  {
+    id: 8,
+    firstName: "Olivia",
+    lastName: "Brown",
+    email: "olivia.brown@example.com",
+    role: "Manager",
+  },
+  {
+    id: 9,
+    firstName: "Henry",
+    lastName: "Anderson",
+    email: "henry.anderson@example.com",
+    role: "Designer",
+  },
+  {
+    id: 10,
+    firstName: "Sophia",
+    lastName: "Miller",
+    email: "sophia.miller@example.com",
+    role: "Developer",
+  },
+];
+
+export const DUMMY_NOTES = [
+  {
+    id: 1,
+    title: "How to claim the warranty?",
+    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    tags: [NOTE_TAGS[0], NOTE_TAGS[1]],
+    createdAt: "1696213778",
+    status: "Created",
+    assigned: DUMMY_CONTACTS[0],
+  },
+  {
+    id: 2,
+    title: "How to claim the warranty?",
+    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    tags: [NOTE_TAGS[2], NOTE_TAGS[3]],
+    createdAt: "1696192178",
+    status: "Drafted",
+    assigned: DUMMY_CONTACTS[1],
+  },
+  {
+    id: 3,
+    title: "How to claim the warranty?",
+    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    tags: [NOTE_TAGS[4], NOTE_TAGS[5]],
+    createdAt: "1696127378",
+    status: "Drafted",
+    assigned: DUMMY_CONTACTS[2],
+  },
+];
