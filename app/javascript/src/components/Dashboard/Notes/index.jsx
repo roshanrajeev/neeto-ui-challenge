@@ -22,13 +22,12 @@ const Notes = () => {
   return (
     <Container>
       <Header
-        title={t("notes.title")}
+        title={t("titles.notes")}
         actionBlock={
           <Button
             icon="ri-add-line"
-            label={t("notes.add_note")}
+            label={t("buttons.add_entity", { entity: "Note" })}
             size="small"
-            onClick={() => setIsNewNotePaneOpen(true)}
           />
         }
       />
@@ -43,9 +42,9 @@ const Notes = () => {
         <EmptyState
           image={EmptyNotesListImage}
           primaryAction={noop}
-          primaryActionLabel={t("notes.empty.new_note")}
-          subtitle={t("notes.empty.subtitle")}
-          title={t("notes.empty.title")}
+          primaryActionLabel={t("empty_state.new_note")}
+          subtitle={t("empty_state.subtitle")}
+          title={t("empty_state.title")}
         />
       )}
     </Container>

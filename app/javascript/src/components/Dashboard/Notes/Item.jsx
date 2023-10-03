@@ -29,9 +29,9 @@ const Item = ({ note, onDelete }) => {
             icon={() => <MenuVertical size="15px" />}
           >
             <Menu>
-              <MenuItem.Button>{t("note.edit")}</MenuItem.Button>
+              <MenuItem.Button>{t("edit")}</MenuItem.Button>
               <MenuItem.Button onClick={() => setIsDeleteAlertOpen(true)}>
-                {t("note.delete")}
+                {t("delete")}
               </MenuItem.Button>
             </Menu>
           </Dropdown>
@@ -62,9 +62,9 @@ const Item = ({ note, onDelete }) => {
       </div>
       <Alert
         isOpen={isDeleteAlertOpen}
-        message={t("note.delete.alert.message")}
-        submitButtonLabel={t("note.delete.alert.submit")}
-        title={t("note.delete.alert.title")}
+        message={t("note_delete_alert.message")}
+        submitButtonLabel={t("continue")}
+        title={t("note_delete_alert.title")}
         onClose={() => setIsDeleteAlertOpen(false)}
         onSubmit={() => onDelete(note.id)}
       />
