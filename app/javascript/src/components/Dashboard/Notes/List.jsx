@@ -3,7 +3,7 @@ import React from "react";
 import Item from "./Item";
 
 const List = ({ notes = [] }) => (
-  <>
+  <div className="flex w-full flex-col gap-y-3">
     {notes.map(note => (
       <Item
         createdAt={note.createdAt}
@@ -14,6 +14,6 @@ const List = ({ notes = [] }) => (
         title={note.title}
       />
     ))}
-  </>
+  </div>
 );
 export default List;

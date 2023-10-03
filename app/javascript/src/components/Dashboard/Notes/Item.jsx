@@ -3,34 +3,30 @@ import React from "react";
 import { Clock, MenuVertical } from "@bigbinary/neeto-icons";
 import { Avatar, Tag, Tooltip, Typography } from "@bigbinary/neetoui";
 
-import { calculateElapsedTime, formatTime } from "components/utils";
+import { calculateElapsedTime, formatTimeForTooltip } from "./utils";
 
 const Item = ({ createdAt, description, id, tags, title }) => (
-  <div className="mb-3  w-full rounded-sm border border-solid p-4 shadow-sm">
+  <div className="flex w-full flex-col gap-y-2 rounded-sm border border-solid p-4 shadow-sm">
     <div className="flex justify-between">
-      <Typography className="mb-2" style="h4">
-        {title}
-      </Typography>
+      <Typography style="h4">{title}</Typography>
       <button>
         <MenuVertical size="15px" />
       </button>
     </div>
-    <Typography className="neeto-ui-text-gray-600 mb-2" style="body2">
+    <Typography className="neeto-ui-text-gray-600" style="body2">
       {description}
     </Typography>
     <hr />
-    <div className="mt-3 flex items-center justify-between">
-      <div>
+    <div className="flex items-center justify-between">
+      <div className="flex gap-x-1">
         {tags.map(tag => (
-          <Tag className="mr-1" key={`${id}-${tag}`} label={tag} />
+          <Tag key={`${id}-${tag}`} label={tag} />
         ))}
       </div>
-      <Tooltip content={formatTime(createdAt)} position="bottom">
-        <div className="flex items-center">
-          <span className="mr-1">
-            <Clock size="16px" />
-          </span>
-          <Typography className="mr-1" style="body3">
+      <Tooltip content={formatTimeForTooltip(createdAt)} position="bottom">
+        <div className="flex items-center gap-x-1">
+          <Clock size="16px" />
+          <Typography style="body3">
             {calculateElapsedTime(createdAt)}
           </Typography>
           <Avatar size="small" />
