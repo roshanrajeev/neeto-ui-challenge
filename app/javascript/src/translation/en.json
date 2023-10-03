@@ -13,11 +13,12 @@
     "new_note": "Add new note"
   },
   "toasts": {
-    "added_entity": "{{entity}} has been successfully added"
+    "added_entity": "{{entity}} has been successfully added",
+    "deleted_entity": "{{entity}} has been successfully deleted"
   },
-  "note_delete_alert": {
-    "title": "Delete Note",
-    "message": "Are you sure you want to delete the note? This action cannot be undone."
+  "delete_alert": {
+    "entity_title": "Delete {{entity}}",
+    "entity_message": "Are you sure you want to delete the {{entity}}? This action cannot be undone."
   },
   "edit": "Edit",
   "delete": "Delete",

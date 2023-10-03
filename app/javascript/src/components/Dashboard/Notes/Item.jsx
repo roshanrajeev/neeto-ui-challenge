@@ -62,9 +62,9 @@ const Item = ({ note, onDelete }) => {
       </div>
       <Alert
         isOpen={isDeleteAlertOpen}
-        message={t("note_delete_alert.message")}
+        message={t("delete_alert.entity_message", { entity: "note" })}
         submitButtonLabel={t("continue")}
-        title={t("note_delete_alert.title")}
+        title={t("delete_alert.entity_title", { entity: "Note" })}
         onClose={() => setIsDeleteAlertOpen(false)}
         onSubmit={() => onDelete(note.id)}
       />
