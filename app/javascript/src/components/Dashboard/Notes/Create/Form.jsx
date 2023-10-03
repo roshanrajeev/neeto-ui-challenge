@@ -9,7 +9,10 @@ import {
   Select,
 } from "@bigbinary/neetoui/formik";
 
-import { NOTE_FORM_INITIAL_VALUES } from "../constants";
+import {
+  NOTE_FORM_INITIAL_VALUES,
+  NOTE_FORM_VALIDATION_SCHEMA,
+} from "../constants";
 import { noteFormContactOptions, noteFormTagOptions } from "../utils";
 
 const CONTACT_OPTIONS = noteFormContactOptions();
@@ -19,6 +22,7 @@ const Form = ({ onSubmit, onClose }) => (
   <FormikForm
     formikProps={{
       initialValues: NOTE_FORM_INITIAL_VALUES,
+      validationSchema: NOTE_FORM_VALIDATION_SCHEMA,
       onSubmit,
     }}
   >
@@ -29,6 +33,7 @@ const Form = ({ onSubmit, onClose }) => (
           label="Title"
           name="title"
           placeholder="Enter note title"
+          unlimitedChars={false}
         />
         <Textarea
           required
@@ -36,11 +41,12 @@ const Form = ({ onSubmit, onClose }) => (
           name="description"
           placeholder="Enter note description"
           rows={3}
+          unlimitedChars={false}
         />
         <Select
           required
           label="Assigned Contact"
-          name="assigned"
+          name="assignedContact"
           options={CONTACT_OPTIONS}
         />
         <Select

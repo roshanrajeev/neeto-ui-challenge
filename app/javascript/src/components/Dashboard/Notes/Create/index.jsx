@@ -10,7 +10,7 @@ import Form from "./Form";
 const Create = ({ isOpen, onClose, setNotes }) => {
   const handleSubmit = formValues => {
     const createdAt = getTimestampInSeconds();
-    const assigned = formValues.assigned.value;
+    const assignedContact = formValues.assignedContact.value;
 
     // TODO: use format [{label, value}] instead of mapping to [label]
     // This will be fixed in a future PR.
@@ -21,7 +21,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
       id: uuid(),
       tags,
       createdAt,
-      assigned,
+      assignedContact,
     };
 
     setNotes(prev => [newNote, ...prev]);
