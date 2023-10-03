@@ -1,4 +1,7 @@
 {
   "notes.title": "All Notes",
-  "notes.add_note": "Add Note"
+  "notes.add_note": "Add Note",
+  "notes.empty.title": "Looks like you don't have any notes!",
+  "notes.empty.subtitle": "Add your notes to send customized emails to them.",
+  "notes.empty.new_note": "Add new note"
 }
