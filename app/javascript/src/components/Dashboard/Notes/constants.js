@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import * as yup from "yup";
 
 export const NOTE_FORM_INITIAL_VALUES = {
@@ -8,8 +9,21 @@ export const NOTE_FORM_INITIAL_VALUES = {
 };
 
 export const NOTE_FORM_VALIDATION_SCHEMA = yup.object().shape({
-  title: yup.string().trim().required("Required"),
-  description: yup.string().trim().required("Required"),
-  assignedContact: yup.object().nullable().required("Required"),
-  tags: yup.array().nullable().min(1, "Required").required("Required"),
+  title: yup
+    .string()
+    .trim()
+    .required(t("schema.required_entity", { entity: "title" })),
+  description: yup
+    .string()
+    .trim()
+    .required(t("schema.required_entity", { entity: "description" })),
+  assignedContact: yup
+    .object()
+    .nullable()
+    .required(t("schema.required_entity", { entity: "assigned contact" })),
+  tags: yup
+    .array()
+    .nullable()
+    .min(1, t("schema.required_entity", { entity: "tags" }))
+    .required(t("schema.required_entity", { entity: "tags" })),
 });

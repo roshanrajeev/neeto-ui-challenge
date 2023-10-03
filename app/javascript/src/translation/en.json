@@ -44,5 +44,8 @@
       "save": "Save Changes",
       "cancel": "Cancel"
     }
+  },
+  "schema": {
+    "required_entity": "Require field {{entity}}"
   }
 }
