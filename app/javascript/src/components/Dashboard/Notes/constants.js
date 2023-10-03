@@ -1,28 +1,29 @@
-import { v4 as uuid } from "uuid";
+import { t } from "i18next";
+import * as yup from "yup";
 
-export const DUMMY_NOTES = [
-  {
-    id: uuid(),
-    title: "How to claim the warranty?",
-    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    tags: ["Getting Started", "Onboarding"],
-    createdAt: "1696213778",
-    status: "Created",
-  },
-  {
-    id: uuid(),
-    title: "How to claim the warranty?",
-    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    tags: ["User Flow", "UX"],
-    createdAt: "1696192178",
-    status: "Drafted",
-  },
-  {
-    id: uuid(),
-    title: "How to claim the warranty?",
-    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    tags: ["Bugs", "V2"],
-    createdAt: "1696127378",
-    status: "Drafted",
-  },
-];
+export const NOTE_FORM_INITIAL_VALUES = {
+  title: "",
+  description: "",
+  assignedContact: null,
+  tags: null,
+};
+
+export const NOTE_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  title: yup
+    .string()
+    .trim()
+    .required(t("schema.required_entity", { entity: "title" })),
+  description: yup
+    .string()
+    .trim()
+    .required(t("schema.required_entity", { entity: "description" })),
+  assignedContact: yup
+    .object()
+    .nullable()
+    .required(t("schema.required_entity", { entity: "assigned contact" })),
+  tags: yup
+    .array()
+    .nullable()
+    .min(1, t("schema.required_entity", { entity: "tags" }))
+    .required(t("schema.required_entity", { entity: "tags" })),
+});

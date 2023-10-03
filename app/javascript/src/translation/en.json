@@ -20,5 +20,32 @@
   },
   "edit": "Edit",
   "delete": "Delete",
-  "continue": "Continue"
+  "continue": "Continue",
+  "note_form": {
+    "label": {
+      "title": "Title",
+      "description": "Description",
+      "assigned_contact": "Assigned Contact",
+      "tags": "Tags"
+    },
+    "name": {
+      "title": "title",
+      "description": "description",
+      "assigned_contact": "assignedContact",
+      "tags": "tags"
+    },
+    "placeholder": {
+      "title": "Enter note title",
+      "description": "Enter note description",
+      "assigned_contact": "Select contact",
+      "tags": "Select tags"
+    },
+    "buttons": {
+      "save": "Save Changes",
+      "cancel": "Cancel"
+    }
+  },
+  "schema": {
+    "required_entity": "Require field {{entity}}"
+  }
 }
