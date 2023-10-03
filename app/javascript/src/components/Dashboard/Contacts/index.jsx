@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 
 import { noop } from "components/utils";
 
+import Table from "./Table";
+
 const Contacts = () => {
   const { t } = useTranslation();
 
@@ -27,6 +29,7 @@ const Contacts = () => {
           unlimitedChars: false,
         }}
       />
+      <Table />
     </Container>
   );
 };
