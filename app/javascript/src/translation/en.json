@@ -13,7 +13,7 @@
     "new_note": "Add new note"
   },
   "toasts": {
-    "note_added": "Note has been successfully added"
+    "added_entity": "{{entity}} has been successfully added"
   },
   "note_delete_alert": {
     "title": "Delete Note",
@@ -47,13 +47,38 @@
     }
   },
   "schema": {
-    "required_entity": "Require field {{entity}}"
+    "required_entity": "Required field {{entity}}",
+    "invalid_entity": "Invalid {{entity}}"
   },
   "contacts_table": {
     "title": {
       "name_and_role": "Name & Role",
       "email": "Email",
       "created_at": "Created At"
+    }
+  },
+  "contact_form": {
+    "label": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "role": "Role"
+    },
+    "name": {
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "email": "email",
+      "role": "role"
+    },
+    "placeholder": {
+      "firstName": "Enter first name",
+      "lastName": "Enter last name",
+      "email": "Enter your email address",
+      "role": "Select Role"
+    },
+    "buttons": {
+      "save": "Save Changes",
+      "cancel": "Cancel"
     }
   }
 }

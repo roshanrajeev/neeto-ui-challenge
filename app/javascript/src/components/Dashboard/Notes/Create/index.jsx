@@ -28,7 +28,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
     };
 
     setNotes(prev => [newNote, ...prev]);
-    Toastr.success(t("toasts.note_added"));
+    Toastr.success(t("toasts.added_entity", { entity: "Note" }));
     onClose();
   };
 
