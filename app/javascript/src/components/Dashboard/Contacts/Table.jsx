@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 import { MenuHorizontal } from "@bigbinary/neeto-icons";
 import {
+  Alert,
   Avatar,
   Dropdown,
   Table as NeetoUITable,
+  Toastr,
   Tooltip,
   Typography,
 } from "@bigbinary/neetoui";
@@ -15,8 +17,14 @@ import { contactsTableData } from "./utils";
 const Table = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
 
   const { t } = useTranslation();
+
+  const handleDelete = () => {
+    setIsDeleteAlertOpen(false);
+    Toastr.success(t("toasts.deleted_entity", { entity: "Contact" }));
+  };
 
   const COLUMN_DATA = [
     {
@@ -61,7 +69,9 @@ const Table = () => {
           <Dropdown buttonStyle="text" icon={MenuHorizontal}>
             <Menu>
               <MenuItem.Button>{t("edit")}</MenuItem.Button>
-              <MenuItem.Button>{t("delete")}</MenuItem.Button>
+              <MenuItem.Button onClick={() => setIsDeleteAlertOpen(true)}>
+                {t("delete")}
+              </MenuItem.Button>
             </Menu>
           </Dropdown>
         );
@@ -70,16 +80,26 @@ const Table = () => {
   ];
 
   return (
-    <NeetoUITable
-      rowSelection
-      columnData={COLUMN_DATA}
-      currentPageNumber={pageNumber}
-      defaultPageSize={9}
-      handlePageChange={page => setPageNumber(page)}
-      rowData={contactsTableData()}
-      selectedRowKeys={selectedRowKeys}
-      onRowSelect={selectedRowKeys => setSelectedRowKeys(selectedRowKeys)}
-    />
+    <>
+      <NeetoUITable
+        rowSelection
+        columnData={COLUMN_DATA}
+        currentPageNumber={pageNumber}
+        defaultPageSize={9}
+        handlePageChange={page => setPageNumber(page)}
+        rowData={contactsTableData()}
+        selectedRowKeys={selectedRowKeys}
+        onRowSelect={selectedRowKeys => setSelectedRowKeys(selectedRowKeys)}
+      />
+      <Alert
+        isOpen={isDeleteAlertOpen}
+        message={t("delete_alert.entity_message", { entity: "contact" })}
+        submitButtonLabel={t("continue")}
+        title={t("delete_alert.entity_title", { entity: "Contact" })}
+        onClose={() => setIsDeleteAlertOpen(false)}
+        onSubmit={handleDelete}
+      />
+    </>
   );
 };
 

@@ -13,11 +13,12 @@
     "new_note": "Add new note"
   },
   "toasts": {
-    "note_added": "Note has been successfully added"
+    "added_entity": "{{entity}} has been successfully added",
+    "deleted_entity": "{{entity}} has been successfully deleted"
   },
-  "note_delete_alert": {
-    "title": "Delete Note",
-    "message": "Are you sure you want to delete the note? This action cannot be undone."
+  "delete_alert": {
+    "entity_title": "Delete {{entity}}",
+    "entity_message": "Are you sure you want to delete the {{entity}}? This action cannot be undone."
   },
   "edit": "Edit",
   "delete": "Delete",
@@ -47,13 +48,38 @@
     }
   },
   "schema": {
-    "required_entity": "Require field {{entity}}"
+    "required_entity": "Required field {{entity}}",
+    "invalid_entity": "Invalid {{entity}}"
   },
   "contacts_table": {
     "title": {
       "name_and_role": "Name & Role",
       "email": "Email",
       "created_at": "Created At"
+    }
+  },
+  "contact_form": {
+    "label": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "role": "Role"
+    },
+    "name": {
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "email": "email",
+      "role": "role"
+    },
+    "placeholder": {
+      "firstName": "Enter first name",
+      "lastName": "Enter last name",
+      "email": "Enter your email address",
+      "role": "Select Role"
+    },
+    "buttons": {
+      "save": "Save Changes",
+      "cancel": "Cancel"
     }
   }
 }

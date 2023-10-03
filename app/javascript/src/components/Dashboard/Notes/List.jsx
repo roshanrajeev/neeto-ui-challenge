@@ -1,11 +1,17 @@
 import React from "react";
 
+import { Toastr } from "@bigbinary/neetoui";
+import { useTranslation } from "react-i18next";
+
 import Item from "./Item";
 
 const List = ({ notes, setNotes }) => {
+  const { t } = useTranslation();
+
   const handleDelete = id => {
     const filteredNotes = [...notes].filter(note => note.id !== id);
     setNotes(filteredNotes);
+    Toastr.success(t("toasts.deleted_entity", { entity: "Note" }));
   };
 
   return (
