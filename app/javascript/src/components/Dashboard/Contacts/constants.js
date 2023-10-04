@@ -44,6 +44,14 @@ export const CONTACT_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .required(t("schema.requiredEntity", { entity: "assigned contact" })),
   role: yup
     .object()
+    .shape({
+      label: yup
+        .string()
+        .required(t("schema.invalidEntity", { entity: "label" })),
+      value: yup
+        .string()
+        .required(t("schema.invalidEntity", { entity: "value" })),
+    })
     .nullable()
     .required(t("schema.requiredEntity", { entity: "role" })),
 });

@@ -21,6 +21,15 @@ export const NOTE_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .required(t("schema.requiredEntity", { entity: "description" })),
   assignedContact: yup
     .object()
+    .shape({
+      label: yup
+        .string()
+        .trim()
+        .required(t("schema.invalidEntity", { entity: "label" })),
+      value: yup
+        .object()
+        .required(t("schema.invalidEntity", { entity: "value" })),
+    })
     .nullable()
     .required(t("schema.requiredEntity", { entity: "assigned contact" })),
   tags: yup
