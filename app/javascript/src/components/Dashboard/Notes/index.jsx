@@ -22,7 +22,7 @@ const Notes = () => {
   return (
     <Container>
       <Header
-        actionButtonLabel={t("buttons.add_entity", { entity: "Contacts" })}
+        actionButtonLabel={t("buttons.add_entity", { entity: "Notes" })}
         title={t("titles.notes")}
         onActionButtonClick={() => setIsNewNotePaneOpen(true)}
       />
