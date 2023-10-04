@@ -3,7 +3,7 @@ import * as yup from "yup";
 
 import { buildContactsTableData } from "./utils";
 
-const ALPHANUMERIC_REGEX = /^[a-zA-Z0-9]+$/;
+const ALPHABETS_REGEX = /^[a-zA-Z]+$/;
 
 export const CONTACT_FORM_INITIAL_VALUES = {
   firstName: "",
@@ -35,12 +35,12 @@ export const CONTACT_FORM_VALIDATION_SCHEMA = yup.object().shape({
   firstName: yup
     .string()
     .trim()
-    .matches(ALPHANUMERIC_REGEX, t("schema.onlyAlphaNumeric"))
+    .matches(ALPHABETS_REGEX, t("schema.onlyAlphabets"))
     .required(t("schema.requiredEntity", { entity: "First Name" })),
   lastName: yup
     .string()
     .trim()
-    .matches(ALPHANUMERIC_REGEX, t("schema.onlyAlphaNumeric"))
+    .matches(ALPHABETS_REGEX, t("schema.onlyAlphabets"))
     .required(t("schema.requiredEntity", { entity: "Last Name" })),
   email: yup
     .string()
