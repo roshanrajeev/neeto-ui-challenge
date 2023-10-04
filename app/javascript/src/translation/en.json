@@ -48,8 +48,11 @@
     }
   },
   "schema": {
-    "requiredEntity": "Required field {{entity}}",
-    "invalidEntity": "Invalid {{entity}}"
+    "requiredEntity": "{{entity}} is required",
+    "requiredEntity_one": "Atleast one {{entity}} is required",
+    "invalidEntity": "{{entity}} is invalid",
+    "onlyAlphaNumeric": "Only letters and numbers are allowed",
+    "onlyAlphaNumericWithSpecialChars": "Only letters, numbers, spaces and hyphen are allowed"
   },
   "contactsTable": {
     "title": {
