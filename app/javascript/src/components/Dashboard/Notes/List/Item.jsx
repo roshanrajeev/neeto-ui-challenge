@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import Dropdown from "components/commons/Dropdown";
 
-import { calculateElapsedTime, formatTimeForTooltip } from "./utils";
+import { calculateElapsedTime, formatTimeForTooltip } from "../utils";
 
 const Item = ({ note, onDelete }) => {
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
