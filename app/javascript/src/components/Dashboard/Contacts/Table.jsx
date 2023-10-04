@@ -15,7 +15,7 @@ const Table = () => {
 
   const handleDelete = () => {
     setIsDeleteAlertOpen(false);
-    Toastr.success(t("toasts.deleted_entity", { entity: "Contact" }));
+    Toastr.success(t("toasts.deletedEntity", { entity: "Contact" }));
   };
 
   const handleDeleteAlertOpen = () => setIsDeleteAlertOpen(true);
@@ -37,9 +37,9 @@ const Table = () => {
       />
       <Alert
         isOpen={isDeleteAlertOpen}
-        message={t("delete_alert.entity_message", { entity: "contact" })}
+        message={t("deleteAlert.entityMessage", { entity: "contact" })}
         submitButtonLabel={t("continue")}
-        title={t("delete_alert.entity_title", { entity: "Contact" })}
+        title={t("deleteAlert.entityTitle", { entity: "Contact" })}
         onClose={handleDeleteAlertClose}
         onSubmit={handleDelete}
       />

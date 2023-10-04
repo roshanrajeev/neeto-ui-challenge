@@ -27,32 +27,32 @@ const Form = ({ onSubmit, onClose }) => {
           <div className="flex gap-x-2">
             <Input
               required
-              label={t("contact_form.label.firstName")}
-              name={t("contact_form.name.firstName")}
-              placeholder={t("contact_form.placeholder.firstName")}
+              label={t("contactForm.label.firstName")}
+              name={t("contactForm.name.firstName")}
+              placeholder={t("contactForm.placeholder.firstName")}
               unlimitedChars={false}
             />
             <Input
               required
-              label={t("contact_form.label.lastName")}
-              name={t("contact_form.name.lastName")}
-              placeholder={t("contact_form.placeholder.lastName")}
+              label={t("contactForm.label.lastName")}
+              name={t("contactForm.name.lastName")}
+              placeholder={t("contactForm.placeholder.lastName")}
               unlimitedChars={false}
             />
           </div>
           <Input
             required
-            label={t("contact_form.label.email")}
-            name={t("contact_form.name.email")}
-            placeholder={t("contact_form.placeholder.email")}
+            label={t("contactForm.label.email")}
+            name={t("contactForm.name.email")}
+            placeholder={t("contactForm.placeholder.email")}
             unlimitedChars={false}
           />
           <Select
             required
-            label={t("contact_form.label.role")}
-            name={t("contact_form.name.role")}
+            label={t("contactForm.label.role")}
+            name={t("contactForm.name.role")}
             options={CONTACT_FORM_ROLES}
-            placeholder={t("contact_form.placeholder.role")}
+            placeholder={t("contactForm.placeholder.role")}
           />
         </div>
       </Pane.Body>
@@ -60,11 +60,11 @@ const Form = ({ onSubmit, onClose }) => {
         <div className="flex flex-row gap-2">
           <Button
             icon={Check}
-            label={t("contact_form.buttons.save")}
+            label={t("contactForm.buttons.save")}
             type="submit"
           />
           <Button
-            label={t("contact_form.buttons.cancel")}
+            label={t("contactForm.buttons.cancel")}
             style="text"
             type="reset"
             onClick={onClose}

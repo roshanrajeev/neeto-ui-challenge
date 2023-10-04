@@ -22,7 +22,7 @@ export const buildContactsTableData = () =>
 
 export const buildContactsTableColumnData = ({ onContactDelete }) => [
   {
-    title: t("contacts_table.title.name_and_role"),
+    title: t("contactsTable.title.nameAndRole"),
     dataIndex: "name",
     key: "name",
     width: "30%",
@@ -39,13 +39,13 @@ export const buildContactsTableColumnData = ({ onContactDelete }) => [
     ),
   },
   {
-    title: t("contacts_table.title.email"),
+    title: t("contactsTable.title.email"),
     dataIndex: "email",
     key: "email",
     width: "30%",
   },
   {
-    title: t("contacts_table.title.created_at"),
+    title: t("contactsTable.title.createdAt"),
     dataIndex: "createdAt",
     key: "createdAt",
     width: "30%",

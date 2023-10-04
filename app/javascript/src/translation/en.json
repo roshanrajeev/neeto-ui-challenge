@@ -2,44 +2,44 @@
   "titles": {
     "notes": "All Notes",
     "contacts": "All Contacts",
-    "add_new_entity": "Add New {{entity}}"
+    "addNewEntity": "Add New {{entity}}"
   },
   "buttons": {
-    "add_entity": "Add {{entity}}"
+    "addEntity": "Add {{entity}}"
   },
-  "empty_state": {
+  "emptyState": {
     "title": "Looks like you don't have any notes!",
     "subtitle": "Add your notes to send customized emails to them.",
-    "new_note": "Add new note"
+    "newNote": "Add new note"
   },
   "toasts": {
-    "added_entity": "{{entity}} has been successfully added",
-    "deleted_entity": "{{entity}} has been successfully deleted"
+    "addedEntity": "{{entity}} has been successfully added",
+    "deletedEntity": "{{entity}} has been successfully deleted"
   },
-  "delete_alert": {
-    "entity_title": "Delete {{entity}}",
-    "entity_message": "Are you sure you want to delete the {{entity}}? This action cannot be undone."
+  "deleteAlert": {
+    "entityTitle": "Delete {{entity}}",
+    "entityMessage": "Are you sure you want to delete the {{entity}}? This action cannot be undone."
   },
   "edit": "Edit",
   "delete": "Delete",
   "continue": "Continue",
-  "note_form": {
+  "noteForm": {
     "label": {
       "title": "Title",
       "description": "Description",
-      "assigned_contact": "Assigned Contact",
+      "assignedContact": "Assigned Contact",
       "tags": "Tags"
     },
     "name": {
       "title": "title",
       "description": "description",
-      "assigned_contact": "assignedContact",
+      "assignedContact": "assignedContact",
       "tags": "tags"
     },
     "placeholder": {
       "title": "Enter note title",
       "description": "Enter note description",
-      "assigned_contact": "Select contact",
+      "assignedContact": "Select contact",
       "tags": "Select tags"
     },
     "buttons": {
@@ -48,17 +48,17 @@
     }
   },
   "schema": {
-    "required_entity": "Required field {{entity}}",
-    "invalid_entity": "Invalid {{entity}}"
+    "requiredEntity": "Required field {{entity}}",
+    "invalidEntity": "Invalid {{entity}}"
   },
-  "contacts_table": {
+  "contactsTable": {
     "title": {
-      "name_and_role": "Name & Role",
+      "nameAndRole": "Name & Role",
       "email": "Email",
-      "created_at": "Created At"
+      "createdAt": "Created At"
     }
   },
-  "contact_form": {
+  "contactForm": {
     "label": {
       "firstName": "First Name",
       "lastName": "Last Name",

@@ -15,7 +15,7 @@ const List = ({ notes, setNotes, emptyStateAction = noop }) => {
   const handleDelete = id => {
     const filteredNotes = [...notes].filter(note => note.id !== id);
     setNotes(filteredNotes);
-    Toastr.success(t("toasts.deleted_entity", { entity: "Note" }));
+    Toastr.success(t("toasts.deletedEntity", { entity: "Note" }));
   };
 
   return (
@@ -30,9 +30,9 @@ const List = ({ notes, setNotes, emptyStateAction = noop }) => {
         <EmptyState
           image={EmptyNotesListImage}
           primaryAction={emptyStateAction}
-          primaryActionLabel={t("empty_state.new_note")}
-          subtitle={t("empty_state.subtitle")}
-          title={t("empty_state.title")}
+          primaryActionLabel={t("emptyState.newNote")}
+          subtitle={t("emptyState.subtitle")}
+          title={t("emptyState.title")}
         />
       )}
     </>

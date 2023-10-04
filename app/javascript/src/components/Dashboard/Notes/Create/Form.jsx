@@ -33,33 +33,33 @@ const Form = ({ onSubmit, onClose }) => {
         <div className="flex w-full flex-col gap-4">
           <Input
             required
-            label={t("note_form.label.title")}
-            name={t("note_form.name.title")}
-            placeholder={t("note_form.placeholder.description")}
+            label={t("noteForm.label.title")}
+            name={t("noteForm.name.title")}
+            placeholder={t("noteForm.placeholder.description")}
             unlimitedChars={false}
           />
           <Textarea
             required
-            label={t("note_form.label.description")}
-            name={t("note_form.name.description")}
-            placeholder={t("note_form.placeholder.description")}
+            label={t("noteForm.label.description")}
+            name={t("noteForm.name.description")}
+            placeholder={t("noteForm.placeholder.description")}
             rows={3}
             unlimitedChars={false}
           />
           <Select
             required
-            label={t("note_form.label.assigned_contact")}
-            name={t("note_form.name.assigned_contact")}
+            label={t("noteForm.label.assignedContact")}
+            name={t("noteForm.name.assignedContact")}
             options={NOTE_FORM_CONTACT_OPTIONS}
-            placeholder={t("note_form.placeholder.assigned_contact")}
+            placeholder={t("noteForm.placeholder.assignedContact")}
           />
           <Select
             isMulti
             required
-            label={t("note_form.label.tags")}
-            name={t("note_form.name.tags")}
+            label={t("noteForm.label.tags")}
+            name={t("noteForm.name.tags")}
             options={NOTE_TAGS}
-            placeholder={t("note_form.placeholder.tags")}
+            placeholder={t("noteForm.placeholder.tags")}
           />
         </div>
       </Pane.Body>
@@ -67,11 +67,11 @@ const Form = ({ onSubmit, onClose }) => {
         <div className="flex flex-row gap-2">
           <Button
             icon={Check}
-            label={t("note_form.buttons.save")}
+            label={t("noteForm.buttons.save")}
             type="submit"
           />
           <Button
-            label={t("note_form.buttons.cancel")}
+            label={t("noteForm.buttons.cancel")}
             style="text"
             type="reset"
             onClick={onClose}

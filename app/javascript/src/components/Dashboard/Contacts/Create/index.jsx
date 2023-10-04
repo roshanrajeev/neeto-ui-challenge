@@ -9,7 +9,7 @@ const Create = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
 
   const handleSubmit = () => {
-    Toastr.success(t("toasts.added_entity", { entity: "Contact" }));
+    Toastr.success(t("toasts.addedEntity", { entity: "Contact" }));
     onClose();
   };
 
@@ -17,7 +17,7 @@ const Create = ({ isOpen, onClose }) => {
     <Pane isOpen={isOpen} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          {t("titles.add_new_entity", { entity: "Contact" })}
+          {t("titles.addNewEntity", { entity: "Contact" })}
         </Typography>
       </Pane.Header>
       <Form onClose={onClose} onSubmit={handleSubmit} />

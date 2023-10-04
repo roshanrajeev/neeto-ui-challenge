@@ -33,19 +33,19 @@ export const CONTACT_FORM_VALIDATION_SCHEMA = yup.object().shape({
   firstName: yup
     .string()
     .trim()
-    .required(t("schema.required_entity", { entity: "first name" })),
+    .required(t("schema.requiredEntity", { entity: "first name" })),
   lastName: yup
     .string()
     .trim()
-    .required(t("schema.required_entity", { entity: "last name" })),
+    .required(t("schema.requiredEntity", { entity: "last name" })),
   email: yup
     .string()
-    .email(t("schema.invalid_entity", { entity: "email" }))
-    .required(t("schema.required_entity", { entity: "assigned contact" })),
+    .email(t("schema.invalidEntity", { entity: "email" }))
+    .required(t("schema.requiredEntity", { entity: "assigned contact" })),
   role: yup
     .object()
     .nullable()
-    .required(t("schema.required_entity", { entity: "role" })),
+    .required(t("schema.requiredEntity", { entity: "role" })),
 });
 
 export const CONTACTS_TABLE_DATA = buildContactsTableData();
