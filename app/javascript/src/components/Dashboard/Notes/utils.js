@@ -8,7 +8,7 @@ export const calculateElapsedTime = timestamp =>
 export const formatTimeForTooltip = timestamp =>
   dayjs.unix(timestamp).format("dddd, h:mA");
 
-export const noteFormContactOptions = () =>
+export const buildNoteFormContactOptions = () =>
   DUMMY_CONTACTS.map(contact => ({
     label: `${contact.firstName} ${contact.lastName}`,
     value: contact,

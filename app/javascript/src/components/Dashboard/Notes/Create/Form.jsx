@@ -13,12 +13,10 @@ import { useTranslation } from "react-i18next";
 import { NOTE_TAGS } from "components/Dashboard/constants";
 
 import {
+  NOTE_FORM_CONTACT_OPTIONS,
   NOTE_FORM_INITIAL_VALUES,
   NOTE_FORM_VALIDATION_SCHEMA,
 } from "../constants";
-import { noteFormContactOptions } from "../utils";
-
-const CONTACT_OPTIONS = noteFormContactOptions();
 
 const Form = ({ onSubmit, onClose }) => {
   const { t } = useTranslation();
@@ -52,7 +50,7 @@ const Form = ({ onSubmit, onClose }) => {
             required
             label={t("note_form.label.assigned_contact")}
             name={t("note_form.name.assigned_contact")}
-            options={CONTACT_OPTIONS}
+            options={NOTE_FORM_CONTACT_OPTIONS}
             placeholder={t("note_form.placeholder.assigned_contact")}
           />
           <Select

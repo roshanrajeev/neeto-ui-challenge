@@ -1,6 +1,8 @@
 import { t } from "i18next";
 import * as yup from "yup";
 
+import { buildContactsTableData } from "./utils";
+
 export const CONTACT_FORM_INITIAL_VALUES = {
   firstName: "",
   lastName: "",
@@ -45,3 +47,5 @@ export const CONTACT_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .nullable()
     .required(t("schema.required_entity", { entity: "role" })),
 });
+
+export const CONTACTS_TABLE_DATA = buildContactsTableData();

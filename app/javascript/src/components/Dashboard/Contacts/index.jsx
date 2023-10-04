@@ -13,17 +13,20 @@ const Contacts = () => {
 
   const { t } = useTranslation();
 
+  const handleNewContactPaneOpen = () => setIsNewContactPaneOpen(true);
+  const handleNewContactPaneClose = () => setIsNewContactPaneOpen(false);
+
   return (
     <Container>
       <Header
         actionButtonLabel={t("buttons.add_entity", { entity: "Contacts" })}
         title={t("titles.contacts")}
-        onActionButtonClick={() => setIsNewContactPaneOpen(true)}
+        onActionButtonClick={handleNewContactPaneOpen}
       />
       <Table />
       <Create
         isOpen={isNewContactPaneOpen}
-        onClose={() => setIsNewContactPaneOpen(false)}
+        onClose={handleNewContactPaneClose}
       />
     </Container>
   );

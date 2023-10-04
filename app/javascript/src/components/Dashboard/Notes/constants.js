@@ -1,6 +1,8 @@
 import { t } from "i18next";
 import * as yup from "yup";
 
+import { buildNoteFormContactOptions } from "./utils";
+
 export const NOTE_FORM_INITIAL_VALUES = {
   title: "",
   description: "",
@@ -27,3 +29,5 @@ export const NOTE_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .min(1, t("schema.required_entity", { entity: "tags" }))
     .required(t("schema.required_entity", { entity: "tags" })),
 });
+
+export const NOTE_FORM_CONTACT_OPTIONS = buildNoteFormContactOptions();

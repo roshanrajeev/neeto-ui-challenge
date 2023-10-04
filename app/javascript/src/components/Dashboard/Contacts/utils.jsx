@@ -11,7 +11,7 @@ import { DUMMY_CONTACTS } from "../constants";
 export const formatTimeForTable = timestamp =>
   dayjs.unix(timestamp).format("MMM, D, YYYY");
 
-export const contactsTableData = () =>
+export const buildContactsTableData = () =>
   DUMMY_CONTACTS.map(contact => ({
     name: `${contact.firstName} ${contact.lastName}`,
     email: contact.email,
@@ -20,7 +20,7 @@ export const contactsTableData = () =>
     role: contact.role,
   }));
 
-export const contactsTableColumnData = ({ onContactDelete }) => [
+export const buildContactsTableColumnData = ({ onContactDelete }) => [
   {
     title: t("contacts_table.title.name_and_role"),
     dataIndex: "name",
