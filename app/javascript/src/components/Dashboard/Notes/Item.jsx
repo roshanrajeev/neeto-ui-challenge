@@ -43,7 +43,7 @@ const Item = ({ note, onDelete }) => {
         <div className="flex items-center justify-between">
           <div className="flex gap-x-1">
             {note.tags.map(tag => (
-              <Tag key={`${note.id}-${tag}`} label={tag} />
+              <Tag key={tag.value} label={tag.label} />
             ))}
           </div>
           <Tooltip

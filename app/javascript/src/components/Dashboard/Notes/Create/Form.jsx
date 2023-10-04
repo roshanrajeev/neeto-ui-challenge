@@ -10,14 +10,15 @@ import {
 } from "@bigbinary/neetoui/formik";
 import { useTranslation } from "react-i18next";
 
+import { NOTE_TAGS } from "components/Dashboard/constants";
+
 import {
   NOTE_FORM_INITIAL_VALUES,
   NOTE_FORM_VALIDATION_SCHEMA,
 } from "../constants";
-import { noteFormContactOptions, noteFormTagOptions } from "../utils";
+import { noteFormContactOptions } from "../utils";
 
 const CONTACT_OPTIONS = noteFormContactOptions();
-const TAG_OPTIONS = noteFormTagOptions();
 
 const Form = ({ onSubmit, onClose }) => {
   const { t } = useTranslation();
@@ -59,7 +60,7 @@ const Form = ({ onSubmit, onClose }) => {
             required
             label={t("note_form.label.tags")}
             name={t("note_form.name.tags")}
-            options={TAG_OPTIONS}
+            options={NOTE_TAGS}
             placeholder={t("note_form.placeholder.tags")}
           />
         </div>

@@ -14,11 +14,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
   const handleSubmit = formValues => {
     const createdAt = getTimestampInSeconds();
     const assignedContact = formValues.assignedContact.value;
-
-    // TODO: use format [{label, value}] instead of mapping to [label]
-    // This will be fixed in a future PR.
-    const tags = formValues.tags.map(tag => tag.label);
-
+    const tags = formValues.tags;
     const newNote = {
       ...formValues,
       id: uuid(),

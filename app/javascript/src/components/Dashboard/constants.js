@@ -1,10 +1,28 @@
 export const NOTE_TAGS = [
-  "Getting Started",
-  "Onboarding",
-  "User Flow",
-  "UX",
-  "Bugs",
-  "V2",
+  {
+    label: "Getting Started",
+    value: "getting-started",
+  },
+  {
+    label: "Onboarding",
+    value: "onboarding",
+  },
+  {
+    label: "User Flow",
+    value: "user-flow",
+  },
+  {
+    label: "UX",
+    value: "ux",
+  },
+  {
+    label: "Bugs",
+    value: "bugs",
+  },
+  {
+    label: "V2",
+    value: "v2",
+  },
 ];
 
 export const DUMMY_CONTACTS = [
@@ -173,27 +191,27 @@ export const DUMMY_CONTACTS = [
 export const DUMMY_NOTES = [
   {
     id: 1,
-    title: "How to claim the warranty?",
-    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    tags: [NOTE_TAGS[0], NOTE_TAGS[1]],
+    title: "Website Redesign",
+    description: `Redesign the company website to improve user experience and incorporate the latest design trends.`,
+    tags: [NOTE_TAGS[3], NOTE_TAGS[5]],
     createdAt: "1696213778",
     status: "Created",
     assignedContact: DUMMY_CONTACTS[0],
   },
   {
     id: 2,
-    title: "How to claim the warranty?",
-    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    tags: [NOTE_TAGS[2], NOTE_TAGS[3]],
+    title: "New Employee Onboarding",
+    description: `Create an onboarding checklist and training materials for new employees joining the company.`,
+    tags: [NOTE_TAGS[0], NOTE_TAGS[1]],
     createdAt: "1696192178",
     status: "Drafted",
     assignedContact: DUMMY_CONTACTS[1],
   },
   {
     id: 3,
-    title: "How to claim the warranty?",
-    description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    tags: [NOTE_TAGS[4], NOTE_TAGS[5]],
+    title: "App Navigation Review",
+    description: `Evaluate and propose improvements to the app navigation to enhance user flow and accessibility.`,
+    tags: [NOTE_TAGS[2], NOTE_TAGS[3]],
     createdAt: "1696127378",
     status: "Drafted",
     assignedContact: DUMMY_CONTACTS[2],
