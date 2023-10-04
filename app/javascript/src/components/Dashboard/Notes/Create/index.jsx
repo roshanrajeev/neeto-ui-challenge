@@ -24,7 +24,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
     };
 
     setNotes(prev => [newNote, ...prev]);
-    Toastr.success(t("toasts.added_entity", { entity: "Note" }));
+    Toastr.success(t("toasts.addedEntity", { entity: "Note" }));
     onClose();
   };
 
@@ -32,7 +32,7 @@ const Create = ({ isOpen, onClose, setNotes }) => {
     <Pane isOpen={isOpen} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          {t("titles.add_new_entity", { entity: "Note" })}
+          {t("titles.addNewEntity", { entity: "Note" })}
         </Typography>
       </Pane.Header>
       <Form onClose={onClose} onSubmit={handleSubmit} />

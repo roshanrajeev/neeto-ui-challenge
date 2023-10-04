@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
-import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button } from "neetoui";
-import { Container, Header } from "neetoui/layouts";
+import { Container } from "neetoui/layouts";
 import { useTranslation } from "react-i18next";
 
-import EmptyState from "components/commons/EmptyState";
-import { noop } from "components/utils";
+import Header from "components/commons/Header";
 
 import Create from "./Create";
 import List from "./List";
@@ -19,35 +16,26 @@ const Notes = () => {
 
   const { t } = useTranslation();
 
+  const handleNewNotePaneOpen = () => setIsNewNotePaneOpen(true);
+  const handleNewNotePaneClose = () => setIsNewNotePaneOpen(false);
+
   return (
     <Container>
       <Header
+        actionButtonLabel={t("buttons.addEntity", { entity: "Notes" })}
         title={t("titles.notes")}
-        actionBlock={
-          <Button
-            icon="ri-add-line"
-            label={t("buttons.add_entity", { entity: "Note" })}
-            size="small"
-            onClick={() => setIsNewNotePaneOpen(true)}
-          />
-        }
+        onActionButtonClick={handleNewNotePaneOpen}
       />
       <Create
         isOpen={isNewNotePaneOpen}
         setNotes={setNotes}
-        onClose={() => setIsNewNotePaneOpen(false)}
+        onClose={handleNewNotePaneClose}
       />
-      {notes.length > 0 ? (
-        <List notes={notes} setNotes={setNotes} />
-      ) : (
-        <EmptyState
-          image={EmptyNotesListImage}
-          primaryAction={noop}
-          primaryActionLabel={t("empty_state.new_note")}
-          subtitle={t("empty_state.subtitle")}
-          title={t("empty_state.title")}
-        />
-      )}
+      <List
+        emptyStateAction={handleNewNotePaneOpen}
+        notes={notes}
+        setNotes={setNotes}
+      />
     </Container>
   );
 };

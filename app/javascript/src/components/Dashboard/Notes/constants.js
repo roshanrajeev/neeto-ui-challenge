@@ -1,6 +1,8 @@
 import { t } from "i18next";
 import * as yup from "yup";
 
+import { buildNoteFormContactOptions } from "./utils";
+
 export const NOTE_FORM_INITIAL_VALUES = {
   title: "",
   description: "",
@@ -12,18 +14,29 @@ export const NOTE_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup
     .string()
     .trim()
-    .required(t("schema.required_entity", { entity: "title" })),
+    .required(t("schema.requiredEntity", { entity: "title" })),
   description: yup
     .string()
     .trim()
-    .required(t("schema.required_entity", { entity: "description" })),
+    .required(t("schema.requiredEntity", { entity: "description" })),
   assignedContact: yup
     .object()
+    .shape({
+      label: yup
+        .string()
+        .trim()
+        .required(t("schema.invalidEntity", { entity: "label" })),
+      value: yup
+        .object()
+        .required(t("schema.invalidEntity", { entity: "value" })),
+    })
     .nullable()
-    .required(t("schema.required_entity", { entity: "assigned contact" })),
+    .required(t("schema.requiredEntity", { entity: "assigned contact" })),
   tags: yup
     .array()
     .nullable()
-    .min(1, t("schema.required_entity", { entity: "tags" }))
-    .required(t("schema.required_entity", { entity: "tags" })),
+    .min(1, t("schema.requiredEntity", { entity: "tags" }))
+    .required(t("schema.requiredEntity", { entity: "tags" })),
 });
+
+export const NOTE_FORM_CONTACT_OPTIONS = buildNoteFormContactOptions();
