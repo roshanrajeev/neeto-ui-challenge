@@ -2,7 +2,7 @@
   "titles": {
     "notes": "All Notes",
     "contacts": "All Contacts",
-    "addNewEntity": "Add New {{entity}}"
+    "addNewEntity": "Add new {{entity}}"
   },
   "buttons": {
     "addEntity": "Add {{entity}}"
@@ -18,7 +18,7 @@
   },
   "deleteAlert": {
     "entityTitle": "Delete {{entity}}",
-    "entityMessage": "Are you sure you want to delete the {{entity}}? This action cannot be undone."
+    "entityMessage": "Are you sure you want to delete the {{entity}} for <strong>{{label}}</strong>? This action cannot be undone."
   },
   "edit": "Edit",
   "delete": "Delete",
@@ -48,8 +48,11 @@
     }
   },
   "schema": {
-    "requiredEntity": "Required field {{entity}}",
-    "invalidEntity": "Invalid {{entity}}"
+    "requiredEntity": "{{entity}} is required",
+    "requiredEntity_one": "Atleast one {{entity}} is required",
+    "invalidEntity": "{{entity}} is invalid",
+    "onlyAlphaNumeric": "Only letters and numbers are allowed",
+    "onlyAlphaNumericWithSpecialChars": "Only letters, numbers, spaces and hyphen are allowed"
   },
   "contactsTable": {
     "title": {

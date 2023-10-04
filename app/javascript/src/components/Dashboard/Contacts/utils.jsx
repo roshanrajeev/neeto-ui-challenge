@@ -56,6 +56,11 @@ export const buildContactsTableColumnData = ({ onContactDelete }) => [
     dataIndex: "menu",
     key: "menu",
     width: 40,
-    render: () => <Dropdown iconType="horizontal" onDelete={onContactDelete} />,
+    render: (_, contact) => (
+      <Dropdown
+        iconType="horizontal"
+        onDelete={() => onContactDelete(contact)}
+      />
+    ),
   },
 ];

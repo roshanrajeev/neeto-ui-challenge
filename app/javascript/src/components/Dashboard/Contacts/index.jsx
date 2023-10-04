@@ -19,7 +19,7 @@ const Contacts = () => {
   return (
     <Container>
       <Header
-        actionButtonLabel={t("buttons.addEntity", { entity: "Contacts" })}
+        actionButtonLabel={t("buttons.addEntity", { entity: "Contact" })}
         title={t("titles.contacts")}
         onActionButtonClick={handleNewContactPaneOpen}
       />
