@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button } from "neetoui";
-import { Container, Header } from "neetoui/layouts";
+import { Container } from "neetoui/layouts";
 import { useTranslation } from "react-i18next";
 
 import EmptyState from "components/commons/EmptyState";
+import Header from "components/commons/Header";
 import { noop } from "components/utils";
 
 import Create from "./Create";
@@ -22,15 +22,9 @@ const Notes = () => {
   return (
     <Container>
       <Header
+        actionButtonLabel={t("buttons.add_entity", { entity: "Contacts" })}
         title={t("titles.notes")}
-        actionBlock={
-          <Button
-            icon="ri-add-line"
-            label={t("buttons.add_entity", { entity: "Note" })}
-            size="small"
-            onClick={() => setIsNewNotePaneOpen(true)}
-          />
-        }
+        onActionButtonClick={() => setIsNewNotePaneOpen(true)}
       />
       <Create
         isOpen={isNewNotePaneOpen}
