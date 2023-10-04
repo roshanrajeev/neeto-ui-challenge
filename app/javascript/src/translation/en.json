@@ -18,7 +18,7 @@
   },
   "deleteAlert": {
     "entityTitle": "Delete {{entity}}",
-    "entityMessage": "Are you sure you want to delete the {{entity}}? This action cannot be undone."
+    "entityMessage": "Are you sure you want to delete the {{entity}} for <strong>{{label}}</strong>? This action cannot be undone."
   },
   "edit": "Edit",
   "delete": "Delete",

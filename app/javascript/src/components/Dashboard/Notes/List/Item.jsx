@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Clock } from "@bigbinary/neeto-icons";
 import { Alert, Avatar, Tag, Tooltip, Typography } from "@bigbinary/neetoui";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import Dropdown from "components/commons/Dropdown";
 
@@ -48,9 +48,15 @@ const Item = ({ note, onDelete }) => {
       </div>
       <Alert
         isOpen={isDeleteAlertOpen}
-        message={t("deleteAlert.entityMessage", { entity: "note" })}
         submitButtonLabel={t("continue")}
         title={t("deleteAlert.entityTitle", { entity: "Note" })}
+        message={
+          <Trans
+            components={{ strong: <span className="font-bold" /> }}
+            i18nKey="deleteAlert.entityMessage"
+            values={{ entity: "note", label: note.title }}
+          />
+        }
         onClose={() => setIsDeleteAlertOpen(false)}
         onSubmit={() => onDelete(note.id)}
       />
