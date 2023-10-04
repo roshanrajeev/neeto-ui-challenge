@@ -17,7 +17,7 @@ const Create = ({ isOpen, onClose }) => {
     <Pane isOpen={isOpen} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          {t("titles.addNewEntity", { entity: "Contact" })}
+          {t("titles.addNewEntity", { entity: "contact" })}
         </Typography>
       </Pane.Header>
       <Form onClose={onClose} onSubmit={handleSubmit} />

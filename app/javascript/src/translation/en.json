@@ -2,7 +2,7 @@
   "titles": {
     "notes": "All Notes",
     "contacts": "All Contacts",
-    "addNewEntity": "Add New {{entity}}"
+    "addNewEntity": "Add new {{entity}}"
   },
   "buttons": {
     "addEntity": "Add {{entity}}"

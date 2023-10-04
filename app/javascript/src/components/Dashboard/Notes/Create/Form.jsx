@@ -35,7 +35,7 @@ const Form = ({ onSubmit, onClose }) => {
             required
             label={t("noteForm.label.title")}
             name={t("noteForm.name.title")}
-            placeholder={t("noteForm.placeholder.description")}
+            placeholder={t("noteForm.placeholder.title")}
             unlimitedChars={false}
           />
           <Textarea

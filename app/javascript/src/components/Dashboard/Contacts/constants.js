@@ -3,6 +3,8 @@ import * as yup from "yup";
 
 import { buildContactsTableData } from "./utils";
 
+const ALPHANUMERIC_REGEX = /^[a-zA-Z0-9]+$/;
+
 export const CONTACT_FORM_INITIAL_VALUES = {
   firstName: "",
   lastName: "",
@@ -33,10 +35,12 @@ export const CONTACT_FORM_VALIDATION_SCHEMA = yup.object().shape({
   firstName: yup
     .string()
     .trim()
+    .matches(ALPHANUMERIC_REGEX, "Only alphanumeric characters are allowed")
     .required(t("schema.requiredEntity", { entity: "first name" })),
   lastName: yup
     .string()
     .trim()
+    .matches(ALPHANUMERIC_REGEX, "Only alphanumeric characters are allowed")
     .required(t("schema.requiredEntity", { entity: "last name" })),
   email: yup
     .string()
